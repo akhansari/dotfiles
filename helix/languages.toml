@@ -1,0 +1,21 @@
+
+[[language]]
+name = "c-sharp"
+auto-format = true
+formatter = { command = "dotnet", args = ["csharpier"] }
+
+[[language]]
+name = "typescript"
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+[[language]]
+name = "javascript"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "json"] }
