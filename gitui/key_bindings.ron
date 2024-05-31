@@ -1,0 +1,15 @@
+(
+    move_left: Some(( code: Char('u'), modifiers: "")),
+    move_right: Some(( code: Char('e'), modifiers: "")),
+    move_up: Some(( code: Char('p'), modifiers: "")),
+    move_down: Some(( code: Char('i'), modifiers: "")),
+
+    popup_up: Some(( code: Char('p'), modifiers: "")),
+    popup_down: Some(( code: Char('i'), modifiers: "")),
+    shift_up: Some(( code: Char('p'), modifiers: "SHIFT")),
+    shift_down: Some(( code: Char('i'), modifiers: "SHIFT")),
+
+    edit_file: Some(( code: Char('l'), modifiers: "")),
+
+    push: Some(( code: Char('v'), modifiers: "")),
+)

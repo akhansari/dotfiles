@@ -99,10 +99,3 @@ $env.NU_PLUGIN_DIRS = [
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 
-use ~/.cache/starship/init.nu
-source ~/.cache/zoxide/init.nu
-
-def ll [] { ls | sort-by type }
-alias lse = eza -la --group-directories-first --time-style long-iso --git
-
-

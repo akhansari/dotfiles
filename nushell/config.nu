@@ -155,7 +155,7 @@ $env.config = {
     }
 
     table: {
-        mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
+        mode: reinforced # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
         index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
         show_empty: true # show 'empty list' and 'empty record' placeholders for command output
         padding: { left: 1, right: 1 } # a left right padding of each column in a table
@@ -206,7 +206,7 @@ $env.config = {
         case_sensitive: false # set to true to enable case-sensitive completions
         quick: true    # set this to false to prevent auto-selecting completions when only one remains
         partial: true    # set this to false to prevent partial filling of the prompt
-        algorithm: "prefix"    # prefix or fuzzy
+        algorithm: "fuzzy"    # prefix or fuzzy
         external: {
             enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
             max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
@@ -672,6 +672,27 @@ $env.config = {
             mode: vi_normal
             event: { edit: redo }
         }
+        {
+            name: paste
+            modifier: control
+            keycode: char_v
+            mode: [ vi_normal, vi_insert ]
+            event: { edit: pastesystem }
+        }
     ]
 }
+
+def ll [] { ls | sort-by type }
+def git_activity [] { git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | histogram committer merger | sort-by merger | reverse }
+def git_top_commits [] { git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | first 20 }
+def git_del_other_branches [] { git branch | lines | find "*" --invert | each {|b| git branch -D ($b | str trim) } }
+
+alias lse = eza -la --group-directories-first --time-style long-iso --git
+
+use ~/.cache/starship/init.nu
+source ~/.cache/zoxide/init.nu
+
+source ./git-completions.nu
+source ./npm-completions.nu
+source ./pnpm-completions.nu
 

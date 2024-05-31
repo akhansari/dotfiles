@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local act = wezterm.action
 local config = {}
 
 config.default_prog = { "nu" }
@@ -8,17 +9,22 @@ config.hide_tab_bar_if_only_one_tab = true
 config.font_size = 10.0
 
 config.keys = {
-	{ key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
+	{ key = "c", mods = "CTRL|SHIFT", action = act.ActivateCommandPalette },
+	{ key = "l", mods = "ALT", action = act.ShowLauncher },
 	{
 		key = "h",
 		mods = "ALT",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "v",
 		mods = "ALT",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
+	{ key = "u", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
+	{ key = "e", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },
+	{ key = "p", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Up") },
+	{ key = "i", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
 }
 
 local copy_mode = nil
@@ -27,27 +33,27 @@ if wezterm.gui then
 	table.insert(copy_mode, {
 		key = "u",
 		mods = "NONE",
-		action = wezterm.action.CopyMode("MoveLeft"),
+		action = act.CopyMode("MoveLeft"),
 	})
 	table.insert(copy_mode, {
 		key = "i",
 		mods = "NONE",
-		action = wezterm.action.CopyMode("MoveDown"),
+		action = act.CopyMode("MoveDown"),
 	})
 	table.insert(copy_mode, {
 		key = "p",
 		mods = "NONE",
-		action = wezterm.action.CopyMode("MoveUp"),
+		action = act.CopyMode("MoveUp"),
 	})
 	table.insert(copy_mode, {
 		key = "e",
 		mods = "NONE",
-		action = wezterm.action.CopyMode("MoveRight"),
+		action = act.CopyMode("MoveRight"),
 	})
 	table.insert(copy_mode, {
 		key = "E",
 		mods = "NONE",
-		action = wezterm.action.CopyMode("MoveForwardWordEnd"),
+		action = act.CopyMode("MoveForwardWordEnd"),
 	})
 end
 

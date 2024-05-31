@@ -2,13 +2,13 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
 vim.keymap.set({ "n", "v" }, "u", "h", { desc = "Left" })
-vim.keymap.set({ "n", "v" }, "U", "H", { desc = "Left" })
-vim.keymap.set({ "n", "v" }, "i", "gj", { desc = "Down" })
+vim.keymap.set({ "n", "v" }, "U", "^", { desc = "Go to beginning of line" })
+vim.keymap.set({ "n", "v" }, "i", "<down>", { desc = "Down" })
 vim.keymap.set({ "n", "v" }, "I", "J", { desc = "Down" })
 vim.keymap.set({ "n", "v" }, "p", "k", { desc = "Up" })
 vim.keymap.set({ "n", "v" }, "P", "K", { desc = "Up" })
 vim.keymap.set({ "n", "v" }, "e", "l", { desc = "Right" })
-vim.keymap.set({ "n", "v" }, "E", "L", { desc = "Right" })
+vim.keymap.set({ "n", "v" }, "E", "$", { desc = "Go to end of line" })
 
 vim.keymap.set({ "n", "v" }, "h", "u", { desc = "Undo" })
 vim.keymap.set({ "n", "v" }, "H", "U", { desc = "Undo" })
@@ -25,6 +25,8 @@ vim.keymap.set("n", "<C-p>", "<C-k>", { desc = "Go to upper window", remap = tru
 vim.keymap.set("n", "<C-e>", "<C-l>", { desc = "Go to right window", remap = true })
 
 -- vim.keymap.set("n", "<C-j>", "<C-i>", { desc = "" })
+
+vim.keymap.set("n", "Q", "@@")
 
 vim.keymap.set("n", "<A-i>", "<A-j>", { desc = "Go to lower window", remap = true })
 vim.keymap.set("n", "<A-p>", "<A-k>", { desc = "Go to upper window", remap = true })

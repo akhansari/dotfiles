@@ -11,6 +11,8 @@ return {
 
   -- {
   --   "vuki656/package-info.nvim",
+  --   ft = "json",
+  --   dependencies = "MunifTanjim/nui.nvim",
   --   opts = {
   --     package_manager = "pnpm",
   --   },
