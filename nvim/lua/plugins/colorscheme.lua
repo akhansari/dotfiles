@@ -2,7 +2,6 @@ return {
 
   {
     "folke/tokyonight.nvim",
-    lazy = true,
     opts = {
       style = "night",
       on_colors = function(colors)
@@ -19,4 +18,20 @@ return {
   },
 
   { "Shatur/neovim-ayu" },
+
+  {
+    "catppuccin/nvim",
+    opts = {
+      flavour = "mocha",
+      transparent_background = true,
+      dim_inactive = { enabled = true, percentage = 0.01 },
+    },
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
+  },
 }

@@ -234,7 +234,6 @@ $env.config = {
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
     edit_mode: vi # emacs, vi
-    shell_integration: false # enables terminal shell integration. Off by default, as some terminals have issues with this.
     render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
     use_kitty_protocol: false # enables keyboard enhancement protocol implemented by kitty console, only if your terminal support this.
     highlight_resolved_externals: false # true enables highlighting of external commands in the repl resolved by which.
@@ -683,16 +682,18 @@ $env.config = {
 }
 
 def ll [] { ls | sort-by type }
-def git_activity [] { git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | histogram committer merger | sort-by merger | reverse }
-def git_top_commits [] { git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | first 20 }
-def git_del_other_branches [] { git branch | lines | find "*" --invert | each {|b| git branch -D ($b | str trim) } }
+def git-activity [] { git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | histogram committer merger | sort-by merger | reverse }
+def git-top-commits [] { git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | first 20 }
+def git-del-other-branches [] { git branch | lines | find "*" --invert | each {|b| git branch -D ($b | str trim) } }
 
 alias lse = eza -la --group-directories-first --time-style long-iso --git
 
 use ~/.cache/starship/init.nu
-source ~/.cache/zoxide/init.nu
 
-source ./git-completions.nu
-source ./npm-completions.nu
-source ./pnpm-completions.nu
+# source ./git-completions.nu
+# source ./npm-completions.nu
+# source ./pnpm-completions.nu
+
+source ~/.cache/zoxide/init.nu
+source ~/.config/carapace/init.nu
 
