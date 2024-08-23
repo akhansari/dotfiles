@@ -1,0 +1,9 @@
+
+{:shortcuts {:editor/down ["down" "i"]
+ :editor/up ["up" "p"]
+ :editor/left ["left" "u"]
+ :editor/right ["right" "e"]
+ :editor/select-up ["shift+up" "shift+p"]
+ :editor/select-down ["shift+down" "shift+i"]
+ :editor/select-block-down ["alt+down" "alt+i"]
+ :editor/delete-selection ["backspace" "delete" "d"]}}

@@ -681,19 +681,39 @@ $env.config = {
     ]
 }
 
-def ll [] { ls | sort-by type }
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin/')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/sbin/')
+$env.PATH = ($env.PATH | split row (char esep) | append '~/.volta/bin/')
+$env.PAGER = "ov --quit-if-one-screen"
+# $env.AWS_CONFIG_FILE = "~/.aws/config"
+$env.AWS_DEFAULT_REGION = "eu-west-1"
+$env.AWS_DEFAULT_PROFILE = "archi-dev"
+
+def ll [] { ls -a | sort-by type }
 def git-activity [] { git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | histogram committer merger | sort-by merger | reverse }
 def git-top-commits [] { git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | first 20 }
 def git-del-other-branches [] { git branch | lines | find "*" --invert | each {|b| git branch -D ($b | str trim) } }
 
 alias lse = eza -la --group-directories-first --time-style long-iso --git
+alias fd = fdfind
+alias bat = batcat
 
 use ~/.cache/starship/init.nu
 
-# source ./git-completions.nu
-# source ./npm-completions.nu
-# source ./pnpm-completions.nu
-
 source ~/.cache/zoxide/init.nu
 source ~/.config/carapace/init.nu
+
+def start_zellij [] {
+  if 'ZELLIJ' not-in ($env | columns) {
+    if 'ZELLIJ_AUTO_ATTACH' in ($env | columns) and $env.ZELLIJ_AUTO_ATTACH == 'true' {
+      zellij attach -c
+    } else {
+      zellij
+    }
+    if 'ZELLIJ_AUTO_EXIT' in ($env | columns) and $env.ZELLIJ_AUTO_EXIT == 'true' {
+      exit
+    }
+  }
+}
+start_zellij
 

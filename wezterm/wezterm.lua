@@ -2,29 +2,30 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
 
-config.default_prog = { "nu" }
+config.default_prog = { "/home/linuxbrew/.linuxbrew/bin/nu" }
 
 config.hide_tab_bar_if_only_one_tab = true
 
+config.font = wezterm.font_with_fallback({ "Fira Code", "FiraCode Nerd Font" })
 config.font_size = 10.0
 
 config.keys = {
 	{ key = "c", mods = "CTRL|SHIFT", action = act.ActivateCommandPalette },
-	{ key = "l", mods = "ALT", action = act.ShowLauncher },
+	-- { key = "l", mods = "ALT", action = act.ShowLauncher },
 	{
 		key = "h",
-		mods = "ALT",
+		mods = "CTRL|ALT",
 		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		key = "v",
-		mods = "ALT",
+		mods = "CTRL|ALT",
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
-	{ key = "u", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
-	{ key = "e", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },
-	{ key = "p", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Up") },
-	{ key = "i", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
+	-- { key = "u", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
+	-- { key = "e", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },
+	-- { key = "p", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Up") },
+	-- { key = "i", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
 }
 
 local copy_mode = nil

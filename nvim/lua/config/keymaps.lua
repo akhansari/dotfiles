@@ -3,19 +3,17 @@
 
 vim.keymap.set({ "n", "v" }, "u", "h", { desc = "Left" })
 vim.keymap.set({ "n", "v" }, "U", "^", { desc = "Go to beginning of line" })
-vim.keymap.set({ "n", "v" }, "i", "<down>", { desc = "Down" })
-vim.keymap.set({ "n", "v" }, "I", "J", { desc = "Down" })
+vim.keymap.set({ "n", "v" }, "i", "j", { desc = "Down" })
 vim.keymap.set({ "n", "v" }, "p", "k", { desc = "Up" })
-vim.keymap.set({ "n", "v" }, "P", "K", { desc = "Up" })
 vim.keymap.set({ "n", "v" }, "e", "l", { desc = "Right" })
 vim.keymap.set({ "n", "v" }, "E", "$", { desc = "Go to end of line" })
 
-vim.keymap.set({ "n", "v" }, "h", "u", { desc = "Undo" })
-vim.keymap.set({ "n", "v" }, "H", "U", { desc = "Undo" })
-vim.keymap.set({ "n", "v" }, "l", "i", { desc = "Insert" })
-vim.keymap.set({ "n", "v" }, "L", "I", { desc = "Insert" })
-vim.keymap.set({ "n", "v" }, "k", "p", { desc = "Paste" })
-vim.keymap.set({ "n", "v" }, "K", "P", { desc = "Paste" })
+vim.keymap.set("n", "h", "u", { desc = "Undo" })
+vim.keymap.set("n", "H", "U", { desc = "Undo" })
+vim.keymap.set("n", "l", "i", { desc = "Insert" })
+vim.keymap.set("n", "L", "I", { desc = "Insert" })
+vim.keymap.set({ "n", "x" }, "k", "p", { desc = "Paste" })
+vim.keymap.set({ "n", "x" }, "K", "P", { desc = "Paste" })
 vim.keymap.set({ "n", "v" }, "j", "e", { desc = "End word" })
 vim.keymap.set({ "n", "v" }, "J", "E", { desc = "End word" })
 
@@ -28,12 +26,10 @@ vim.keymap.set("n", "<C-e>", "<C-l>", { desc = "Go to right window", remap = tru
 
 vim.keymap.set("n", "Q", "@@")
 
-vim.keymap.set("n", "<A-i>", "<A-j>", { desc = "Go to lower window", remap = true })
-vim.keymap.set("n", "<A-p>", "<A-k>", { desc = "Go to upper window", remap = true })
-
 vim.keymap.set({ "n", "v" }, "à", "%", { desc = "Next word" })
 
 vim.keymap.set("n", "P", "gK", { desc = "Signature help", remap = true })
+vim.keymap.set("n", "I", "K", { desc = "Hover", remap = true })
 
 vim.keymap.set("n", "éé", "]]", { desc = "Next Reference", remap = true })
 vim.keymap.set("n", "ée", "]e", { desc = "Next Error", remap = true })

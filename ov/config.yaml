@@ -1,0 +1,23 @@
+# Keybind
+# Special key
+#   "Enter","Backspace","Tab","Backtab","Esc",
+#   "Delete", "Insert",
+#   "Up", "Down", "Left", "Right", "Home", "End",
+#   "F1...F64"
+# Modifier key
+#   "ctrl", "alt", "meta", "shift"
+# Connect with modifier key + key
+#   "ctrl+c"
+KeyBind:
+  down:
+    - "Down"
+    - "i"
+  up:
+    - "Up"
+    - "p"
+  left:
+    - "Left"
+    - "u"
+  right:
+    - "Right"
+    - "e"

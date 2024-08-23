@@ -1,0 +1,57 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+" Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/argtextobj.vim'
+
+set scrolloff=5
+set incsearch
+set smartcase
+set relativenumber
+set which-key
+set timeoutlen=5000
+set showmode
+set easymotion
+set surround
+set clipboard=unnamedplus
+
+map <space> <nop>
+let mapleader="\<space>"
+
+nnoremap u <left>
+nnoremap i <down>
+nnoremap p <up>
+nnoremap e <right>
+nnoremap U ^
+nnoremap E $
+
+nnoremap h u
+nnoremap H <C-r>
+nnoremap l i
+nnoremap k p
+nnoremap K P
+nnoremap j e
+nnoremap L I
+
+vnoremap u <left>
+vnoremap i <down>
+vnoremap p <up>
+vnoremap e <right>
+
+nmap <leader>cd <Action>(Debug)
+nmap <leader>cb <Action>(ToggleLineBreakpoint)
+nmap <leader>td <Action>(RiderUnitTestDebugContextAction)
+nmap <leader>bd <Action>(CloseContent)
+nmap <leader>e <Action>(ActivateProjectToolWindow)
+nmap f <Action>(AceAction)
+nmap F <Action>(AceTargetAction)
+nmap gi <Action>(ReSharperGotoImplementation)
+nmap gu <Action>(FindUsages)
+nmap gs <Action>(GotoSymbol)
+nmap I <Action>(ShowHoverInfo)
+nmap P <Action>(Back)
