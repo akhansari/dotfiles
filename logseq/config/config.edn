@@ -1,9 +1,11 @@
 
-{:shortcuts {:editor/down ["down" "i"]
- :editor/up ["up" "p"]
- :editor/left ["left" "u"]
- :editor/right ["right" "e"]
+{:shortcuts {:editor/right ["right" "e"]
+ :whiteboard/ellipse ["w o"]
  :editor/select-up ["shift+up" "shift+p"]
- :editor/select-down ["shift+down" "shift+i"]
+ :editor/left ["left" "u"]
+ :editor/delete-selection ["backspace" "delete" "d"]
  :editor/select-block-down ["alt+down" "alt+i"]
- :editor/delete-selection ["backspace" "delete" "d"]}}
+ :editor/select-down ["shift+down" "shift+i"]
+ :editor/up ["up" "p"]
+ :editor/down ["down" "i"]
+ :editor/toggle-block-children ["mod+;" "o"]}}

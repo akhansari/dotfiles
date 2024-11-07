@@ -227,8 +227,7 @@ $env.config = {
     }
 
     color_config: $dark_theme # if you want a more interesting theme, you can replace the empty record with `$dark_theme`, `$light_theme` or another custom record
-    use_grid_icons: true
-    footer_mode: "25" # always, never, number_of_rows, auto
+    footer_mode: "auto" # always, never, number_of_rows, auto
     float_precision: 2 # the precision for displaying floats in tables
     buffer_editor: "" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
     use_ansi_coloring: true
@@ -671,13 +670,13 @@ $env.config = {
             mode: vi_normal
             event: { edit: redo }
         }
-        {
-            name: paste
-            modifier: control
-            keycode: char_v
-            mode: [ vi_normal, vi_insert ]
-            event: { edit: pastesystem }
-        }
+        # {
+        #     name: paste
+        #     modifier: control
+        #     keycode: char_v
+        #     mode: [ vi_normal, vi_insert ]
+        #     event: { edit: pastesystem }
+        # }
     ]
 }
 
@@ -685,14 +684,10 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linux
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/sbin/')
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.volta/bin/')
 $env.PAGER = "ov --quit-if-one-screen"
+
 # $env.AWS_CONFIG_FILE = "~/.aws/config"
 $env.AWS_DEFAULT_REGION = "eu-west-1"
 $env.AWS_DEFAULT_PROFILE = "archi-dev"
-
-def ll [] { ls -a | sort-by type }
-def git-activity [] { git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | histogram committer merger | sort-by merger | reverse }
-def git-top-commits [] { git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | first 20 }
-def git-del-other-branches [] { git branch | lines | find "*" --invert | each {|b| git branch -D ($b | str trim) } }
 
 alias lse = eza -la --group-directories-first --time-style long-iso --git
 alias fd = fdfind
@@ -700,8 +695,12 @@ alias bat = batcat
 
 use ~/.cache/starship/init.nu
 
-source ~/.cache/zoxide/init.nu
+$env.CARAPACE_BRIDGES = "bash"
 source ~/.config/carapace/init.nu
+
+source ~/.cache/zoxide/init.nu
+source ~/.config/nushell/helpers.nu
+source ~/git-aviv/arch/aviv_architecture/tools/nushell/helpers.nu
 
 def start_zellij [] {
   if 'ZELLIJ' not-in ($env | columns) {

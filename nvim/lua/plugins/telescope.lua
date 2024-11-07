@@ -1,6 +1,9 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-live-grep-args.nvim",
+    },
     opts = {
       defaults = {
         initial_mode = "normal",
@@ -12,5 +15,10 @@ return {
         },
       },
     },
+    config = function(_, opts)
+      local ts = require("telescope")
+      ts.setup(opts)
+      ts.load_extension("live_grep_args")
+    end,
   },
 }

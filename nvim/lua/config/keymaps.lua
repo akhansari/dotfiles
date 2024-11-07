@@ -9,13 +9,13 @@ vim.keymap.set({ "n", "v" }, "e", "l", { desc = "Right" })
 vim.keymap.set({ "n", "v" }, "E", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("n", "h", "u", { desc = "Undo" })
-vim.keymap.set("n", "H", "U", { desc = "Undo" })
+vim.keymap.set("n", "H", "<C-r>", { desc = "Undo" })
 vim.keymap.set("n", "l", "i", { desc = "Insert" })
 vim.keymap.set("n", "L", "I", { desc = "Insert" })
 vim.keymap.set({ "n", "x" }, "k", "p", { desc = "Paste" })
 vim.keymap.set({ "n", "x" }, "K", "P", { desc = "Paste" })
 vim.keymap.set({ "n", "v" }, "j", "e", { desc = "End word" })
-vim.keymap.set({ "n", "v" }, "J", "E", { desc = "End word" })
+-- vim.keymap.set({ "n", "v" }, "J", "E", { desc = "End word" })
 
 vim.keymap.set("n", "<C-u>", "<C-h>", { desc = "Go to left window", remap = true })
 vim.keymap.set("n", "<C-i>", "<C-j>", { desc = "Go to lower window", remap = true })
@@ -60,3 +60,30 @@ vim.keymap.set("n", "çF", "[F", { desc = "Prev Function end", remap = true })
 vim.keymap.set("n", "çm", "[m", { desc = "Prev Method start", remap = true })
 vim.keymap.set("n", "çM", "[M", { desc = "Prev Method end", remap = true })
 vim.keymap.set("n", "çi", "[i", { desc = "Prev Indent", remap = true })
+
+vim.keymap.set("n", "<leader>se", require("telescope").extensions.live_grep_args.live_grep_args, { desc = "RipGrep" })
+
+vim.keymap.set(
+  { "n" },
+  "<leader>pu",
+  require("package-info").update,
+  { silent = true, noremap = true, desc = "Update package" }
+)
+vim.keymap.set(
+  { "n" },
+  "<leader>pd",
+  require("package-info").delete,
+  { silent = true, noremap = true, desc = "Delete package" }
+)
+vim.keymap.set(
+  { "n" },
+  "<leader>pi",
+  require("package-info").install,
+  { silent = true, noremap = true, desc = "Install package" }
+)
+vim.keymap.set(
+  { "n" },
+  "<leader>pp",
+  require("package-info").change_version,
+  { silent = true, noremap = true, desc = "Change package version" }
+)

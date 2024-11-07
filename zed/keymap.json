@@ -1,0 +1,54 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: Open Default Keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "u": "vim::Left",
+      "U": "vim::FirstNonWhitespace",
+      "i": "vim::Down",
+      "I": "vim::ScrollDown",
+      "p": "vim::Up",
+      "P": "vim::ScrollUp",
+      "e": "vim::Right",
+      "E": "vim::EndOfLine",
+      "h": "vim::Undo",
+      "l": "vim::InsertBefore",
+      "L": "vim::InsertFirstNonWhitespace",
+      "k": "vim::Paste",
+      "K": ["vim::Paste", { "before": true }],
+      "z x": "editor::SelectLargerSyntaxNode",
+      "Z x": "editor::SelectSmallerSyntaxNode",
+      "z d": "editor::GoToDiagnostic",
+      "Z d": "editor::GoToPrevDiagnostic",
+      "z c": "editor::GoToHunk",
+      "Z c": "editor::GoToPrevHunk"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "u": "vim::Left",
+      "I": "vim::Down",
+      "P": "vim::Up",
+      "e": "vim::Right"
+    }
+  }
+]

@@ -4,7 +4,8 @@ local config = {}
 
 config.default_prog = { "/home/linuxbrew/.linuxbrew/bin/nu" }
 
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
+config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
 
 config.font = wezterm.font_with_fallback({ "Fira Code", "FiraCode Nerd Font" })
 config.font_size = 10.0

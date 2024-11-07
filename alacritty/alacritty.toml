@@ -1,3 +1,10 @@
+[window]
+dynamic_title = true
+decorations = "none"
+opacity = 0.95
+blur = true
+dynamic_padding = true
+
 [font]
 size = 10.0
 
@@ -20,14 +27,12 @@ style = "Italic"
 family = "FiraCode Nerd Font"
 style = "Bold Italic"
 
-[shell]
+[terminal.shell]
 program = "nu"
-
-[window]
-dynamic_title = true
 
 [keyboard]
 bindings = [
+
     { key = "Space", mods = "Shift|Control", action = "None" },
     { key = "M", mods = "Shift|Control", action = "ToggleViMode" },
 

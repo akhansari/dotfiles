@@ -1,0 +1,17 @@
+unmap h
+unmap j
+unmap k
+unmap l
+mapkey u h
+mapkey e l
+map u scrollLeft
+map e scrollRight
+map P scrollUp
+map I  scrollDown
+map p scrollPageUp
+map i  scrollPageDown
+map q  enterInsertMode
+map U goBack
+map E goForward
+map d goPrevious
+map l  goNext

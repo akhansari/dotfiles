@@ -1,6 +1,3 @@
 # My DotFiles
 
-My key bindings are based on my custom Moonlander keyboard layout.
-https://configure.zsa.io/moonlander/layouts/yB3rJ/latest/0
-
-
+Key bindings are based on a custom [bépo](https://en.wikipedia.org/wiki/B%C3%89PO) layout and a [Moonlander keyboard](https://configure.zsa.io/moonlander/layouts/yB3rJ/latest/0).

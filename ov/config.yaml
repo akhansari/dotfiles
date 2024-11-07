@@ -21,3 +21,9 @@ KeyBind:
   right:
     - "Right"
     - "e"
+  set_view_mode:
+    - "v"
+  page_half_up:
+    - "P"
+  page_half_down:
+    - "I"

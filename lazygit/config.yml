@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never -s --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+
+keybinding:
+  universal:
+    prevItem-alt: p # k
+    nextItem-alt: i # j
+    prevBlock-alt: u # h
+    nextBlock-alt: e # l
+    scrollUpMain-alt1: P
+    scrollDownMain-alt1: I
+    pushFiles: K
+    pullFiles: k
+    edit: l
+  status:
+    checkForUpdate: h
+  files:
+    ignoreFile: j
+  branches:
+    viewGitFlowOptions: j
+    pushTag: K
+    setUpstream: h
+  commits:
+    pickCommit: k
+    startInteractiveRebase: j
+  submodules:
+    init: j
+    update: h

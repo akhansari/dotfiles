@@ -8,3 +8,10 @@ behind = "⇣${count} "
 staged = " "
 untracked = "󱙝 "
 format = "([$all_status$ahead_behind]($style) )"
+
+[aws]
+style = 'bold blue'
+symbol = '🅰 '
+
+[aws.region_aliases]
+eu-west-1 = 'eu'
