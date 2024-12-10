@@ -11,13 +11,12 @@ return {
   },
 
   {
-    "rebelot/kanagawa.nvim",
+    "navarasu/onedark.nvim",
     opts = {
+      style = "darker",
       transparent = true,
     },
   },
-
-  { "Shatur/neovim-ayu" },
 
   {
     "catppuccin/nvim",
@@ -31,7 +30,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "onedark",
     },
   },
 }

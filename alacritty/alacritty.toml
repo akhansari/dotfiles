@@ -1,7 +1,7 @@
 [window]
 dynamic_title = true
-decorations = "none"
-opacity = 0.95
+# decorations = "none"
+opacity = 0.96
 blur = true
 dynamic_padding = true
 
@@ -45,11 +45,14 @@ bindings = [
 ]
 
 [[hints.enabled]]
-regex = "~?(/[^/ ]*)+/?"
+regex = '''\w(?:\S*\/\S*)+\w'''
 action = "Copy"
 binding = { key = "P", mods = "Control|Shift" }
 
 [[hints.enabled]]
-regex = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+regex = '''[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'''
 action = "Copy"
 binding = { key = "D", mods = "Control|Shift" }
+
+[colors.primary]
+background = "#0a0a0a"

@@ -1,17 +1,27 @@
 
 [git_status]
-up_to_date = " "
-stashed = " "
-ahead = "⇡${count} "
-diverged = "⇕⇡${ahead_count}⇣${behind_count} "
-behind = "⇣${count} "
-staged = " "
-untracked = "󱙝 "
+up_to_date = ""
+stashed = " "
+ahead = " ${count} "
+behind = " ${count} "
+diverged = "󰹹 ${ahead_count}${behind_count} "
+conflicted = " "
+untracked = " "
+staged = " "
+modified = " "
+deleted = "󰧧 "
+renamed = "󰷉 "
 format = "([$all_status$ahead_behind]($style) )"
 
 [aws]
 style = 'bold blue'
-symbol = '🅰 '
+symbol = ' '
 
 [aws.region_aliases]
 eu-west-1 = 'eu'
+
+[terraform]
+symbol = ' '
+
+[deno]
+symbol = " "
