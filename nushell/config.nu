@@ -93,11 +93,11 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linux
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/sbin/')
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.volta/bin/')
 $env.PATH = ($env.PATH | split row (char esep) | append '/home/linuxbrew/.linuxbrew/opt/dotnet@8/libexec/')
-$env.DOTNET_ROOT = '/home/linuxbrew/.linuxbrew/opt/dotnet@8/libexec/'
+$env.PATH = ($env.PATH | split row (char esep) | append '/home/akhansari/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin')
 
 $env.PAGER = "ov -F"
 $env.EDITOR = "nvim"
-
+$env.DOTNET_ROOT = '/home/linuxbrew/.linuxbrew/opt/dotnet@8/libexec/'
 $env.AWS_DEFAULT_REGION = "eu-west-1"
 $env.AWS_DEFAULT_PROFILE = "archi-dev"
 

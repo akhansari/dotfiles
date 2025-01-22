@@ -1,7 +1,5 @@
 return {
 
-  { "lukas-reineke/indent-blankline.nvim", enabled = false },
-
   {
     "vuki656/package-info.nvim",
     dependencies = "MunifTanjim/nui.nvim",

@@ -3,7 +3,12 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      style = "night",
+      style = "moon",
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
       on_colors = function(colors)
         colors.border = colors.blue7
       end,
@@ -15,22 +20,28 @@ return {
     opts = {
       style = "darker",
       transparent = true,
+      lualine = {
+        transparent = true,
+      },
     },
   },
 
   {
-    "catppuccin/nvim",
+    "catppuccin",
     opts = {
       flavour = "mocha",
       transparent_background = true,
-      dim_inactive = { enabled = true, percentage = 0.01 },
     },
+  },
+
+  {
+    "Shatur/neovim-ayu",
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark",
+      colorscheme = "ayu",
     },
   },
 }
