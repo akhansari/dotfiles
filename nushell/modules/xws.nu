@@ -1,6 +1,6 @@
 use helpers.nu *
 
-export def lambda-list [--full (-f)] {
+export def "lambda list" [--full (-f)] {
     aws lambda list-functions
     | from yaml
     | get Functions
@@ -11,7 +11,7 @@ export def lambda-list [--full (-f)] {
     | reverse
 }
 
-export def lambda-get [name?: string] {
+export def "lambda get" [name?: string] {
     if $name == null {
         let $name = lambda-list | get FunctionName | to text | fzf --height=~15
         aws lambda get-function --function-name $name | from yaml
@@ -28,7 +28,7 @@ export def lambda-get [name?: string] {
     }
 }
 
-export def lambda-invoke [name: string, --body (-b)] {
+export def "lambda invoke" [name: string, --body (-b)] {
     aws lambda invoke --function-name $name /dev/stdout
     | parse --regex '({.*})'
     | get 0.capture0
@@ -36,14 +36,18 @@ export def lambda-invoke [name: string, --body (-b)] {
     | if $body { get body | from json } else { $in }
 }
 
-export def apigw-invoke [] {
-    let $apigw = aws apigateway get-rest-apis | from yaml | get items | select id name | input list --display name
+export def "apigw list" [] {
+    aws apigateway get-rest-apis | from yaml | get items | select id name
+}
+
+export def "apigw invoke" [] {
+    let $apigw = apigw list | input list --display name
     let $resource = aws apigateway get-resources --rest-api-id $apigw.id | from yaml | get items | input list --display path
     let $method = $resource.resourceMethods | columns | input list
     aws apigateway test-invoke-method --rest-api-id $apigw.id --resource-id $resource.id --http-method $method | from yaml
 }
 
-export def --env aws-assume-role [] {
+export def --env assume-role [] {
     let $arn = aws sts get-caller-identity | from yaml | get Arn
     let $roles = aws iam list-roles
         | from yaml

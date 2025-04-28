@@ -11,13 +11,14 @@ return {
           accept = "<C-l>",
           accept_line = "<C-a>",
           next = "<C-d>",
+          dismiss = "<C-e>",
         },
       },
       panel = { enabled = false },
     },
   },
-  {
-    "zbirenbaum/copilot-cmp",
-    enabled = false,
-  },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   enabled = false,
+  -- },
 }
