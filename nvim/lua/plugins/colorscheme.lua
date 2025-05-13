@@ -3,26 +3,15 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      style = "moon",
+      style = "night",
       transparent = true,
       styles = {
         sidebars = "transparent",
         floats = "transparent",
       },
-      on_colors = function(colors)
-        colors.border = colors.blue7
-      end,
-    },
-  },
-
-  {
-    "navarasu/onedark.nvim",
-    opts = {
-      style = "darker",
-      transparent = true,
-      lualine = {
-        transparent = true,
-      },
+      -- on_colors = function(colors)
+      --   colors.border = colors.blue7
+      -- end,
     },
   },
 
@@ -36,6 +25,14 @@ return {
 
   {
     "Shatur/neovim-ayu",
+    config = function()
+      require("ayu").setup({
+        overrides = {
+          SnacksPickerGitStatusUntracked = { fg = "#565B66" },
+          SnacksPickerDir = { fg = "#565B66" },
+        },
+      })
+    end,
   },
 
   {

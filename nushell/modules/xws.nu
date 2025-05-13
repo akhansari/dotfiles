@@ -29,11 +29,11 @@ export def "lambda get" [name?: string] {
 }
 
 export def "lambda invoke" [name: string, --body (-b)] {
-    aws lambda invoke --function-name $name /dev/stdout
-    | parse --regex '({.*})'
-    | get 0.capture0
-    | from json
-    | if $body { get body | from json } else { $in }
+    let output = aws lambda invoke --function-name $name --log-type Tail /dev/stdout
+    let res = $output | parse --regex '({.*})[\s\S]*LogResult: (.*)' | get 0
+    $res.capture0 | bat -l json --style grid
+    if $body { $res.capture0 | from json | get body | to text | bat -l json --style grid }
+    $res.capture1 | decode base64 | decode | bat -l json --style numbers
 }
 
 export def "apigw list" [] {

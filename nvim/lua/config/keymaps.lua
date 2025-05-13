@@ -1,10 +1,10 @@
--- Keymaps are automatically loaded on the VeryLazy event
+-- Keymaps are automaticaldly loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
 vim.keymap.set({ "n", "v" }, "u", "h", { desc = "Left" })
 vim.keymap.set({ "n", "v" }, "U", "^", { desc = "Go to beginning of line" })
-vim.keymap.set({ "n", "v" }, "i", "j", { desc = "Down" })
-vim.keymap.set({ "n", "v" }, "p", "k", { desc = "Up" })
+vim.keymap.set({ "n" }, "i", "j", { desc = "Down" })
+vim.keymap.set({ "n" }, "p", "k", { desc = "Up" })
 vim.keymap.set({ "n", "v" }, "e", "l", { desc = "Right" })
 vim.keymap.set({ "n", "v" }, "E", "$", { desc = "Go to end of line" })
 
@@ -61,7 +61,12 @@ vim.keymap.set("n", "çm", "[m", { desc = "Prev Method start", remap = true })
 vim.keymap.set("n", "çM", "[M", { desc = "Prev Method end", remap = true })
 vim.keymap.set("n", "çi", "[i", { desc = "Prev Indent", remap = true })
 
-vim.keymap.set("n", "<leader>se", require("telescope").extensions.live_grep_args.live_grep_args, { desc = "RipGrep" })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "sql",
+  callback = function()
+    vim.keymap.set({ "n", "v" }, "<C-e>", "<leader>S", { buffer = true, remap = true })
+  end,
+})
 
 vim.keymap.set(
   { "n" },
