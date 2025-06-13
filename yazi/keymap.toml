@@ -1,0 +1,102 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+[mgr]
+
+prepend_keymap = [
+
+    # Hopping
+    { on = "p", run = "arrow prev", desc = "Previous file" },
+    { on = "i", run = "arrow next", desc = "Next file" },
+
+    # Navigation
+    { on = "u", run = "leave", desc = "Back to the parent directory" },
+    { on = "e", run = "enter", desc = "Enter the child directory" },
+
+    { on = "U", run = "back", desc = "Back to previous directory" },
+    { on = "E", run = "forward", desc = "Forward to next directory" },
+
+    # Seeking
+    { on = "P", run = "seek -5", desc = "Seek up 5 units in the preview" },
+    { on = "I", run = "seek 5", desc = "Seek down 5 units in the preview" },
+
+    # Operation
+    { on = "k", run = "paste", desc = "Paste yanked files" },
+    { on = "K", run = "paste --force", desc = "Paste yanked files (overwrite if the destination exists)" },
+
+]
+
+[tasks]
+
+prepend_keymap = [
+
+    { on = "p", run = "arrow prev", desc = "Previous task" },
+    { on = "i", run = "arrow next", desc = "Next task" },
+
+]
+
+[spot]
+
+prepend_keymap = [
+
+    { on = "p", run = "arrow prev", desc = "Previous line" },
+    { on = "i", run = "arrow next", desc = "Next line" },
+    { on = "u", run = "swipe prev", desc = "Swipe to previous file" },
+    { on = "e", run = "swipe next", desc = "Swipe to next file" },
+
+]
+
+[pick]
+
+prepend_keymap = [
+
+    { on = "p", run = "arrow prev", desc = "Previous option" },
+    { on = "i", run = "arrow next", desc = "Next option" },
+
+]
+
+[input]
+
+prepend_keymap = [
+
+    # Mode
+    { on = "l", run = "insert", desc = "Enter insert mode" },
+    { on = "L", run = [
+        "move first-char",
+        "insert",
+    ], desc = "Move to the BOL, and enter insert mode" },
+
+    # Character-wise movement
+    { on = "u", run = "move -1", desc = "Move back a character" },
+    { on = "e", run = "move 1", desc = "Move forward a character" },
+
+    # Word-wise movement
+    { on = "j", run = "forward --end-of-word", desc = "Move forward to the end of the current or next word" },
+    { on = "J", run = "forward --far --end-of-word", desc = "Move forward to the end of the current or next WORD" },
+
+    # Cut/Yank/Paste
+    { on = "k", run = "paste", desc = "Paste copied characters after the cursor" },
+    { on = "K", run = "paste --before", desc = "Paste copied characters before the cursor" },
+
+    # Undo/Redo
+    { on = "h", run = "undo", desc = "Undo the last operation" },
+    { on = "H", run = "redo", desc = "Redo the last operation" },
+]
+
+[confirm]
+
+prepend_keymap = [
+
+    { on = "p", run = "arrow prev", desc = "Previous line" },
+    { on = "i", run = "arrow next", desc = "Next line" },
+
+]
+
+[help]
+
+prepend_keymap = [
+
+    # Navigation
+    { on = "p", run = "arrow prev", desc = "Previous line" },
+    { on = "i", run = "arrow next", desc = "Next line" },
+
+]

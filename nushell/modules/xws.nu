@@ -13,10 +13,10 @@ export def "lambda list" [--full (-f)] {
 
 export def "lambda get" [name?: string] {
     if $name == null {
-        let $name = lambda-list | get FunctionName | to text | fzf --height=~15
+        let $name = lambda list | get FunctionName | to text | fzf --height=~15
         aws lambda get-function --function-name $name | from yaml
     } else {
-        let $names = lambda-list
+        let $names = lambda list
             | get FunctionName
             | where ($it | contains $name)
         if ($names | is-empty) {
@@ -53,7 +53,7 @@ export def --env assume-role [] {
         | from yaml
         | get Roles
         | each {|x| {Arn:$x.Arn, AssumedRoles: ($x.AssumeRolePolicyDocument.Statement.Principal.AWS? | flatten)} }
-        | filter {|x| $x.AssumedRoles | all {|| $in == $arn } }
+        | where {|x| $x.AssumedRoles | all {|| $in == $arn } }
     if ($roles | is-empty) {
         print -e "Role not found"
         return

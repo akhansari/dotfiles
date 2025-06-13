@@ -61,6 +61,13 @@ vim.keymap.set("n", "çm", "[m", { desc = "Prev Method start", remap = true })
 vim.keymap.set("n", "çM", "[M", { desc = "Prev Method end", remap = true })
 vim.keymap.set("n", "çi", "[i", { desc = "Prev Indent", remap = true })
 
+vim.keymap.set("n", "<leader>e", "<leader>fm", { desc = "Explorer Mini", remap = true })
+vim.keymap.set("n", "<leader>E", "<leader>fM", { desc = "Explorer Mini", remap = true })
+
+vim.keymap.set("n", "<leader>ac", function()
+  vim.cmd("CodeCompanionChat")
+end, { desc = "Toggle CodeCompanionChat" })
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "sql",
   callback = function()

@@ -1,4 +1,4 @@
-local snacks = require("snacks")
+-- local snacks = require("snacks")
 
 return {
   {
@@ -25,6 +25,7 @@ return {
 
         sources = {
           explorer = {
+            layout = { preview = { main = true, enabled = false } },
             win = {
               list = {
                 keys = {
