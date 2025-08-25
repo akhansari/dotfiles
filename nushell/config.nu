@@ -94,6 +94,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linux
 $env.PATH = ($env.PATH | split row (char esep) | append '~/.volta/bin/')
 $env.PATH = ($env.PATH | split row (char esep) | append '/home/linuxbrew/.linuxbrew/opt/dotnet@8/libexec/')
 $env.PATH = ($env.PATH | split row (char esep) | append '/home/akhansari/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin')
+$env.PATH = ($env.PATH | split row (char esep) | append '/home/akhansari/.cargo/bin/')
 
 $env.PAGER = "ov -F"
 $env.EDITOR = "nvim"
@@ -102,7 +103,7 @@ $env.AWS_DEFAULT_REGION = "eu-west-1"
 $env.AWS_DEFAULT_PROFILE = "archi-dev"
 
 alias ezl = eza -la --group-directories-first --time-style long-iso --git
-alias fd = fdfind
+# alias fd = fdfind
 alias bat = batcat
 
 $env.CARAPACE_BRIDGES = "bash"

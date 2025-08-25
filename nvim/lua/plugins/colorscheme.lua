@@ -1,27 +1,19 @@
 return {
 
-  {
-    "folke/tokyonight.nvim",
-    opts = {
-      style = "night",
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-      -- on_colors = function(colors)
-      --   colors.border = colors.blue7
-      -- end,
-    },
-  },
+  { "bluz71/vim-moonfly-colors", name = "moonfly" },
 
-  {
-    "catppuccin",
-    opts = {
-      flavour = "mocha",
-      transparent_background = true,
-    },
-  },
+  -- {
+  --   "NLKNguyen/papercolor-theme",
+  --   config = function()
+  --     vim.g.PaperColor_Theme_Options = {
+  --       theme = {
+  --         default = {
+  --           transparent_background = 1,
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
 
   {
     "Shatur/neovim-ayu",
@@ -38,7 +30,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "ayu",
+      colorscheme = "moonfly",
     },
   },
 }

@@ -65,3 +65,7 @@ export def --env assume-role [] {
     $assumed
 }
 
+export def --env "profile" [] {
+    let $name = aws configure list-profiles | fzf --height=~10
+    $env.AWS_PROFILE = $name
+}

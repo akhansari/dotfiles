@@ -38,8 +38,6 @@ brew "ov"
 brew "procs"
 # Command-line tool for managing long-running shell commands
 brew "pueue"
-# Rsync for cloud storage
-brew "rclone"
 # Rust toolchain installer
 brew "rustup"
 # Cross-shell prompt for astronauts
@@ -58,6 +56,8 @@ brew "zellij"
 brew "zig"
 # CLI tool for querying DNS records with readable, colored output
 brew "zns"
+# File manager
+brew "yazi"
 # Terraform
 tap "hashicorp/tap"
 brew "hashicorp/tap/terraform"

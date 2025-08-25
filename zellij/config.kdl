@@ -71,7 +71,7 @@ keybinds clear-defaults=true {
     }
     scroll {
         // bind "Ctrl s" { SwitchToMode "Normal"; }
-        bind "a" { EditScrollback; SwitchToMode "Normal"; }
+        bind "v" { EditScrollback; SwitchToMode "Normal"; }
         bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "i" "Down" { ScrollDown; }
@@ -191,7 +191,9 @@ plugins {
     tab-bar location="zellij:tab-bar"
     status-bar location="zellij:status-bar"
     strider location="zellij:strider"
-    compact-bar location="zellij:compact-bar"
+    compact-bar location="zellij:compact-bar" {
+        tooltip "F10"
+    }
     session-manager location="zellij:session-manager"
     welcome-screen location="zellij:session-manager" {
         welcome_screen true

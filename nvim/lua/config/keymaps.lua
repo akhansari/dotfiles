@@ -36,7 +36,8 @@ vim.keymap.set("n", "ée", "]e", { desc = "Next Error", remap = true })
 vim.keymap.set("n", "éw", "]w", { desc = "Next Warning", remap = true })
 vim.keymap.set("n", "éd", "]d", { desc = "Next Diagnostic", remap = true })
 vim.keymap.set("n", "éq", "]q", { desc = "Next Quickfix", remap = true })
-vim.keymap.set("n", "éb", "]b", { desc = "Next Buffer", remap = true })
+vim.keymap.set("n", "éb", "<leader>bb", { desc = "Switch Buffer", remap = true })
+vim.keymap.set("n", "é ", "] ", { desc = "Add empty line below cursor", remap = true })
 
 vim.keymap.set("n", "éc", "]c", { desc = "Next Class start", remap = true })
 vim.keymap.set("n", "éC", "]C", { desc = "Next Class end", remap = true })
@@ -51,7 +52,6 @@ vim.keymap.set("n", "çe", "[e", { desc = "Prev Error", remap = true })
 vim.keymap.set("n", "çw", "[w", { desc = "Prev Warning", remap = true })
 vim.keymap.set("n", "çd", "[d", { desc = "Prev Diagnostic", remap = true })
 vim.keymap.set("n", "çq", "[q", { desc = "Prev Quickfix", remap = true })
-vim.keymap.set("n", "çb", "[b", { desc = "Prev Buffer", remap = true })
 
 vim.keymap.set("n", "çc", "[c", { desc = "Prev Class start", remap = true })
 vim.keymap.set("n", "çC", "[C", { desc = "Prev Class end", remap = true })
@@ -74,28 +74,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set({ "n", "v" }, "<C-e>", "<leader>S", { buffer = true, remap = true })
   end,
 })
-
-vim.keymap.set(
-  { "n" },
-  "<leader>pu",
-  require("package-info").update,
-  { silent = true, noremap = true, desc = "Update package" }
-)
-vim.keymap.set(
-  { "n" },
-  "<leader>pd",
-  require("package-info").delete,
-  { silent = true, noremap = true, desc = "Delete package" }
-)
-vim.keymap.set(
-  { "n" },
-  "<leader>pi",
-  require("package-info").install,
-  { silent = true, noremap = true, desc = "Install package" }
-)
-vim.keymap.set(
-  { "n" },
-  "<leader>pp",
-  require("package-info").change_version,
-  { silent = true, noremap = true, desc = "Change package version" }
-)
