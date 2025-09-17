@@ -1,14 +1,25 @@
 return {
   {
-    "echasnovski/mini.indentscope",
+    "nvim-mini/mini.indentscope",
     opts = {
+      symbol = "",
+      draw = {
+        animation = require("mini.indentscope").gen_animation.none(),
+      },
       mappings = {
-        object_scope = "li",
+        -- object_scope = "fallback",
       },
     },
   },
   {
-    "echasnovski/mini.files",
+    "folke/snacks.nvim",
+    opts = {
+      indent = { enabled = false },
+    },
+  },
+
+  {
+    "nvim-mini/mini.files",
     opts = {
       windows = {
         preview = true,

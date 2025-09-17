@@ -1,18 +1,30 @@
 
 command = nu
 
-theme = ayu
-window-theme = dark
+theme = Flexoki Dark
+window-theme = ghostty
 window-decoration = auto
-gtk-adwaita = false
-gtk-tabs-location = hidden
-gtk-titlebar = false
-# background-opacity = 0.95
+gtk-titlebar-style = tabs
+# gtk-tabs-location = hidden
+# background-opacity = 0.9
+background-blur = true
+app-notifications = false
 
 font-family = FiraCode Nerd Font
 font-size = 11
-
 mouse-hide-while-typing = true
 
-keybind = ctrl+enter=unbind
-
+# keybind = ctrl+enter=unbind
+# keybind = shift+enter=text:\x1b\r
+keybind = alt+t=new_tab
+keybind = alt+u=previous_tab
+keybind = alt+e=next_tab
+keybind = alt+ctrl+u=new_split:left
+keybind = alt+ctrl+i=new_split:down
+keybind = alt+ctrl+e=new_split:right
+keybind = alt+ctrl+p=new_split:up
+keybind = ctrl+shift+u=goto_split:left
+keybind = ctrl+shift+i=goto_split:down
+keybind = ctrl+shift+e=goto_split:right
+keybind = ctrl+shift+p=goto_split:top
+keybind = ctrl+|=reset_font_size

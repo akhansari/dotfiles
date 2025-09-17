@@ -16,21 +16,21 @@ return {
   --   },
   -- },
 
-  {
-    "olimorris/codecompanion.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    opts = {
-      strategies = {
-        chat = {
-          adapter = {
-            name = "copilot",
-            model = "gpt-5",
-          },
-        },
-      },
-    },
-  },
+  -- {
+  --   "olimorris/codecompanion.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --   },
+  --   opts = {
+  --     strategies = {
+  --       chat = {
+  --         adapter = {
+  --           name = "copilot",
+  --           model = "gpt-5",
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
 }

@@ -89,43 +89,27 @@ $env.config = {
 
 }
 
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin/')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/sbin/')
-$env.PATH = ($env.PATH | split row (char esep) | append '~/.volta/bin/')
-$env.PATH = ($env.PATH | split row (char esep) | append '/home/linuxbrew/.linuxbrew/opt/dotnet@8/libexec/')
-$env.PATH = ($env.PATH | split row (char esep) | append '/home/akhansari/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin')
-$env.PATH = ($env.PATH | split row (char esep) | append '/home/akhansari/.cargo/bin/')
-
-$env.PAGER = "ov -F"
-$env.EDITOR = "nvim"
-$env.DOTNET_ROOT = '/home/linuxbrew/.linuxbrew/opt/dotnet@8/libexec/'
-$env.AWS_DEFAULT_REGION = "eu-west-1"
-$env.AWS_DEFAULT_PROFILE = "archi-dev"
-
-alias ezl = eza -la --group-directories-first --time-style long-iso --git
-# alias fd = fdfind
+alias lse = eza -la --group-directories-first --time-style long-iso --git
 alias bat = batcat
+alias n = nvim
+def images [] { identify * | from ssv -m 1 -n }
 
-$env.CARAPACE_BRIDGES = "bash"
 source ~/.config/carapace/init.nu
 source ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
+source ~/.cache/mise/init.nu
 
 use ~/.config/nushell/modules/ *
-
-$env.AVIV_REPO_ARCHITECTURE = "~/git-aviv/arch/aviv_architecture"
-$env.AVIV_REPO_AFT = "~/git-aviv/ops/aviv-aft-account-request"
-$env.AVIV_REPO_WORKSPACES = "~/git-aviv/ops/aviv-foundation-workspace-config"
 use ~/git-aviv/arch/aviv_architecture/nushell/aviv/ *
 
-if ($env.ZELLIJ? == null) {
-    if ($env.ZELLIJ_AUTO_ATTACH? == "true") {
-        zellij attach -c
-    } else {
-        zellij
-    }
-    if ($env.ZELLIJ_AUTO_EXIT? == "true") {
-        exit
-    }
-}
+# if ($env.ZELLIJ? == null) {
+#     if ($env.ZELLIJ_AUTO_ATTACH? == "true") {
+#         zellij attach -c
+#     } else {
+#         zellij
+#     }
+#     if ($env.ZELLIJ_AUTO_EXIT? == "true") {
+#         exit
+#     }
+# }
 

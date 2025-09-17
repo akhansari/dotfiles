@@ -37,8 +37,12 @@ vim.keymap.set("n", "éw", "]w", { desc = "Next Warning", remap = true })
 vim.keymap.set("n", "éd", "]d", { desc = "Next Diagnostic", remap = true })
 vim.keymap.set("n", "éq", "]q", { desc = "Next Quickfix", remap = true })
 vim.keymap.set("n", "éb", "<leader>bb", { desc = "Switch Buffer", remap = true })
+vim.keymap.set("n", "én", "]b", { desc = "Next Buffer", remap = true })
+vim.keymap.set("n", "ép", "[b", { desc = "Prev Buffer", remap = true })
 vim.keymap.set("n", "é ", "] ", { desc = "Add empty line below cursor", remap = true })
 
+vim.keymap.set("n", "éa", "]a", { desc = "Next Parameter start", remap = true })
+vim.keymap.set("n", "éa", "]A", { desc = "Next Parameter end", remap = true })
 vim.keymap.set("n", "éc", "]c", { desc = "Next Class start", remap = true })
 vim.keymap.set("n", "éC", "]C", { desc = "Next Class end", remap = true })
 vim.keymap.set("n", "éf", "]f", { desc = "Next Function start", remap = true })
@@ -64,9 +68,9 @@ vim.keymap.set("n", "çi", "[i", { desc = "Prev Indent", remap = true })
 vim.keymap.set("n", "<leader>e", "<leader>fm", { desc = "Explorer Mini", remap = true })
 vim.keymap.set("n", "<leader>E", "<leader>fM", { desc = "Explorer Mini", remap = true })
 
-vim.keymap.set("n", "<leader>ac", function()
-  vim.cmd("CodeCompanionChat")
-end, { desc = "Toggle CodeCompanionChat" })
+-- vim.keymap.set("n", "<leader>ac", function()
+--   vim.cmd("CodeCompanionChat")
+-- end, { desc = "Toggle CodeCompanionChat" })
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "sql",

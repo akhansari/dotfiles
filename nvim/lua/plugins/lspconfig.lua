@@ -14,12 +14,12 @@ return {
         enabled = false,
       },
       servers = {
-        denols = {
-          root_dir = nvim_lsp.util.root_pattern("deno.json"),
-        },
-        vtsls = {
-          root_dir = nvim_lsp.util.root_pattern("package.json"),
-        },
+        -- denols = {
+        --   root_dir = nvim_lsp.util.root_pattern("deno.json"),
+        -- },
+        -- vtsls = {
+        --   root_dir = nvim_lsp.util.root_pattern("package.json"),
+        -- },
       },
     },
   },

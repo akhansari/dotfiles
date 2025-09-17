@@ -4,10 +4,6 @@ brew "awscli"
 brew "bottom"
 # Multi-shell multi-command argument completer
 brew "carapace"
-# Secure runtime for JavaScript and TypeScript
-brew "deno"
-# .NET Core
-brew "dotnet@8"
 # View disk space usage and delete unwanted data, fast
 brew "dua-cli"
 # More intuitive version of du in rust
@@ -26,8 +22,8 @@ brew "jless"
 brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Interactive cheatsheet tool for the command-line
-brew "navi"
+# Polyglot runtime manager
+brew "mise"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Modern shell for the GitHub era
@@ -48,8 +44,6 @@ brew "steampipe"
 brew "terraformer"
 # Program that allows you to count code, quickly
 brew "tokei"
-# JavaScript toolchain manager for reproducible environments
-brew "volta"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
 # Programming language designed for robustness, optimality, and clarity
