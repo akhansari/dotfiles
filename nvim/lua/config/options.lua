@@ -8,8 +8,11 @@ vim.opt.shellxquote = ""
 
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
+vim.o.list = false
 
 vim.o.title = true
 vim.o.titlestring = '%(%{expand("%:~:.:h")}%)/%t %m'
 
 vim.o.backupcopy = "yes" -- make file watcher work on save
+
+vim.o.foldnestmax = 1

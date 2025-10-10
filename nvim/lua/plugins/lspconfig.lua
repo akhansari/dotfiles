@@ -1,8 +1,9 @@
-local nvim_lsp = require("lspconfig")
+-- local nvim_lsp = require("lspconfig")
 
 return {
   {
     "neovim/nvim-lspconfig",
+    ---@class PluginLspOpts
     opts = {
       diagnostics = {
         virtual_text = false,
@@ -11,15 +12,20 @@ return {
         enabled = false,
       },
       codelens = {
-        enabled = false,
+        enabled = true,
       },
       servers = {
-        -- denols = {
-        --   root_dir = nvim_lsp.util.root_pattern("deno.json"),
-        -- },
-        -- vtsls = {
-        --   root_dir = nvim_lsp.util.root_pattern("package.json"),
-        -- },
+        vtsls = {
+          settings = {
+            typescript = {
+              tsserver = {
+                experimental = {
+                  enableProjectDiagnostics = true,
+                },
+              },
+            },
+          },
+        },
       },
     },
   },

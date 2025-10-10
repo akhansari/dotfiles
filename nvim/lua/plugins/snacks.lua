@@ -1,5 +1,3 @@
--- local snacks = require("snacks")
-
 return {
   {
     "folke/snacks.nvim",
@@ -7,6 +5,8 @@ return {
     opts = {
 
       picker = {
+
+        layout = { preset = "ivy_split" },
 
         win = {
           list = {
@@ -25,7 +25,7 @@ return {
 
         sources = {
           explorer = {
-            layout = { preview = { main = true, enabled = false } },
+            -- layout = { preview = { main = true, enabled = false } },
             win = {
               list = {
                 keys = {
