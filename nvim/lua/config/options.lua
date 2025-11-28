@@ -16,3 +16,5 @@ vim.o.titlestring = '%(%{expand("%:~:.:h")}%)/%t %m'
 vim.o.backupcopy = "yes" -- make file watcher work on save
 
 vim.o.foldnestmax = 1
+
+vim.o.scrolloff = 5

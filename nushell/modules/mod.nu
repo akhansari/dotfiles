@@ -1,7 +1,8 @@
 export module ./xgt.nu
 export module ./xws.nu
+export module ./xsw.nu
 
-export def ll [] { ls -a | sort-by type }
+# export def ll [] { ls -a | sort-by type }
 
 export def "http serve" [] {
     start http://localhost:8000

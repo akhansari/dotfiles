@@ -25,3 +25,6 @@ symbol = ' '
 
 [deno]
 symbol = " "
+
+[mise]
+disabled = false

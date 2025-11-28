@@ -21,17 +21,26 @@ return {
   --   end,
   -- },
 
-  {
-    "Shatur/neovim-ayu",
-    config = function()
-      require("ayu").setup({
-        overrides = {
-          SnacksPickerGitStatusUntracked = { fg = "#565B66" },
-          SnacksPickerDir = { fg = "#565B66" },
-        },
-      })
-    end,
-  },
+  -- {
+  --   "Shatur/neovim-ayu",
+  --   config = function()
+  --     require("ayu").setup({
+  --       overrides = {
+  --         Normal = { bg = "None" },
+  --         NormalFloat = { bg = "none" },
+  --         ColorColumn = { bg = "None" },
+  --         SignColumn = { bg = "None" },
+  --         Folded = { bg = "None" },
+  --         FoldColumn = { bg = "None" },
+  --         CursorLine = { bg = "None" },
+  --         CursorColumn = { bg = "None" },
+  --         VertSplit = { bg = "None" },
+  --         SnacksPickerGitStatusUntracked = { fg = "#565B66" },
+  --         SnacksPickerDir = { fg = "#565B66" },
+  --       },
+  --     })
+  --   end,
+  -- },
 
   {
     "LazyVim/LazyVim",

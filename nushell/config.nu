@@ -90,27 +90,17 @@ $env.config = {
 
 }
 
-alias lse = eza -la --group-directories-first --time-style long-iso --git
-alias bat = batcat
+alias ll = eza --long --all --git --no-user --icons --group-directories-first --hyperlink --sort modified --no-permissions 
 alias n = nvim
+alias pacman-orphans = pacman -Qdtq
+alias pacman-paru    = pacman -Qem
+alias pacman-ls      = pacman -Qen
 def images [] { identify * | from ssv -m 1 -n }
 
-source ~/.config/carapace/init.nu
-source ~/.cache/starship/init.nu
-source ~/.cache/zoxide/init.nu
-source ~/.cache/mise/init.nu
+source ~/.config/nushell/sources/carapace.nu
+source ~/.config/nushell/sources/starship.nu
+source ~/.config/nushell/sources/zoxide.nu
+source ~/.config/nushell/sources/mise.nu
 
 use ~/.config/nushell/modules/ *
-use ~/git-aviv/arch/aviv_architecture/nushell/aviv/ *
-
-# if ($env.ZELLIJ? == null) {
-#     if ($env.ZELLIJ_AUTO_ATTACH? == "true") {
-#         zellij attach -c
-#     } else {
-#         zellij
-#     }
-#     if ($env.ZELLIJ_AUTO_EXIT? == "true") {
-#         exit
-#     }
-# }
 

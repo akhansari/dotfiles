@@ -3,18 +3,15 @@ command = nu
 
 theme = Flexoki Dark
 window-theme = ghostty
-window-decoration = auto
+window-decoration = server
 app-notifications = false
 gtk-tabs-location = hidden
-# gtk-titlebar-style = tabs
-# gtk-titlebar-hide-when-maximized = true
-# gtk-wide-tabs = false
-background-image = ./robot.png
-background-image-fit = none
-background-image-opacity = 0.05
-background-image-position = bottom-right
-# background-opacity = 0.9
-# background-blur = true
+# background-image = ./robot.png
+# background-image-fit = none
+# background-image-opacity = 0.05
+# background-image-position = bottom-right
+background-opacity = 0.8
+background-blur = true
 
 font-family = FiraCode Nerd Font
 font-size = 11
@@ -23,7 +20,6 @@ mouse-hide-while-typing = true
 copy-on-select = true
 selection-clear-on-copy = true
 
-# keybind = ctrl+enter=unbind
 keybind = alt+t=new_tab
 keybind = alt+u=previous_tab
 keybind = alt+e=next_tab
@@ -37,6 +33,8 @@ keybind = alt+i=goto_split:down
 keybind = alt+right=goto_split:right
 keybind = alt+p=goto_split:top
 
-keybind = ctrl+|=reset_font_size
+keybind = ctrl+|=reset_font_size   
 keybind = ctrl+tab=toggle_tab_overview
-
+ 
+keybind = ctrl+shift+f=write_scrollback_file:paste
+# keybind = shift+enter=text:\x1b\r
