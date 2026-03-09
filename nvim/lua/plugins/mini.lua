@@ -13,6 +13,7 @@ return {
   },
   {
     "folke/snacks.nvim",
+    ---@type snacks.config
     opts = {
       indent = { enabled = false },
     },

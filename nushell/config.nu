@@ -97,10 +97,10 @@ alias pacman-paru    = pacman -Qem
 alias pacman-ls      = pacman -Qen
 def images [] { identify * | from ssv -m 1 -n }
 
+source ~/.config/nushell/sources/mise.nu
 source ~/.config/nushell/sources/carapace.nu
 source ~/.config/nushell/sources/starship.nu
 source ~/.config/nushell/sources/zoxide.nu
-source ~/.config/nushell/sources/mise.nu
 
 use ~/.config/nushell/modules/ *
 

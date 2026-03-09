@@ -1,27 +1,34 @@
--- local nvim_lsp = require("lspconfig")
-
 return {
   {
     "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
     opts = {
       diagnostics = {
-        virtual_text = false,
+        virtual_text = false, -- for tiny-inline-diagnostic
       },
       inlay_hints = {
         enabled = false,
       },
-      codelens = {
-        enabled = true,
-      },
       servers = {
+
         vtsls = {
+          enabled = false,
           settings = {
             typescript = {
               tsserver = {
                 experimental = {
                   enableProjectDiagnostics = true,
                 },
+              },
+            },
+          },
+        },
+        tsgo = {},
+
+        jsonls = {
+          settings = {
+            json = {
+              format = {
+                enable = false,
               },
             },
           },
@@ -35,7 +42,16 @@ return {
     event = "VeryLazy", -- Or `LspAttach`
     priority = 1000, -- Needs to be loaded in first
     config = function()
-      require("tiny-inline-diagnostic").setup()
+      require("tiny-inline-diagnostic").setup({
+        options = {
+          add_messages = {
+            display_count = true,
+          },
+          multilines = {
+            enabled = true,
+          },
+        },
+      })
     end,
   },
 }

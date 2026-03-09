@@ -6,6 +6,7 @@ return {
       -- "nvim-neotest/neotest-jest",
       -- "Issafalcon/neotest-dotnet",
     },
+    ---@type neotest.Config
     opts = {
       adapters = {
         ["neotest-vitest"] = {},

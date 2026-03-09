@@ -1,5 +1,5 @@
--- Keymaps are automaticaldly loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- These keymaps are based on a customized bépo layout
 
 vim.keymap.set({ "n", "v" }, "u", "h", { desc = "Left" })
 vim.keymap.set({ "n", "v" }, "U", "^", { desc = "Go to beginning of line" })
@@ -15,14 +15,14 @@ vim.keymap.set("n", "L", "I", { desc = "Insert" })
 vim.keymap.set({ "n", "x" }, "k", "p", { desc = "Paste" })
 vim.keymap.set({ "n", "x" }, "K", "P", { desc = "Paste" })
 vim.keymap.set({ "n", "v" }, "j", "e", { desc = "End word" })
--- vim.keymap.set({ "n", "v" }, "J", "E", { desc = "End word" })
+
+vim.keymap.set("n", "<A-u>", "g;", { desc = "Go older position" })
+vim.keymap.set("n", "<A-e>", "g,", { desc = "Go newer position" })
 
 vim.keymap.set("n", "<C-u>", "<C-h>", { desc = "Go to left window", remap = true })
 vim.keymap.set("n", "<C-i>", "<C-j>", { desc = "Go to lower window", remap = true })
 vim.keymap.set("n", "<C-p>", "<C-k>", { desc = "Go to upper window", remap = true })
 vim.keymap.set("n", "<C-e>", "<C-l>", { desc = "Go to right window", remap = true })
-
--- vim.keymap.set("n", "<C-j>", "<C-i>", { desc = "" })
 
 vim.keymap.set("n", "Q", "@@")
 
@@ -68,9 +68,7 @@ vim.keymap.set("n", "çi", "[i", { desc = "Prev Indent", remap = true })
 vim.keymap.set("n", "<leader>e", "<leader>fm", { desc = "Explorer Mini", remap = true })
 vim.keymap.set("n", "<leader>E", "<leader>fM", { desc = "Explorer Mini", remap = true })
 
--- vim.keymap.set("n", "<leader>ac", function()
---   vim.cmd("CodeCompanionChat")
--- end, { desc = "Toggle CodeCompanionChat" })
+vim.keymap.set("n", "<leader><leader>", "<leader>fF", { desc = "Find files", remap = true })
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "sql",
@@ -78,3 +76,9 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set({ "n", "v" }, "<C-e>", "<leader>S", { buffer = true, remap = true })
   end,
 })
+
+vim.keymap.set("n", "<leader>sf", function()
+  Snacks.picker.treesitter({
+    filter = { default = { "Function", "Method" } },
+  })
+end, { desc = "Search Functions" })

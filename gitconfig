@@ -1,0 +1,40 @@
+[user]
+    name = Amin Khansari
+    email = akhansari@users.noreply.github.com
+
+[fetch]
+    prune = true
+
+[pull]
+	rebase = true
+
+[core]
+    pager = delta
+
+[delta]
+    navigate = true
+
+[diff]
+	algorithm = histogram
+	mnemonicPrefix = true
+
+[log]
+	date = relative
+
+[tag]
+    sort = -version:refname
+
+[maintenance]
+    auto = true
+    strategy = incremental
+
+[alias]
+	s = status -sbu
+    unstage = restore --staged
+    squash = git rebase -i HEAD~2
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

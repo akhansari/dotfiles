@@ -27,3 +27,67 @@ KeyBind:
     - "P"
   page_half_down:
     - "I"
+
+General:
+  # flexoki
+  Style:
+    # Body is the style that applies to the body.
+    # Body:
+    #   Background: "#100F0F"
+    #   Foreground: "#CECDC3"
+    # LineNumber is a style that applies line number.
+    # LineNumber:
+    # SearchHighlight is the style that applies to the search highlight.
+    SearchHighlight:
+      Background: "#BC5215"
+    # ColumnHighlight is the style that applies to the column highlight.
+    ColumnHighlight:
+      Background: "#252213"
+    # MarkLine is a style that marked line.
+    # MarkLine:
+    # SectionLine is a style that section delimiter line.
+    SectionLine:
+      Background: "#12253B"
+      Bold: true
+    # VerticalHeader is a style that applies to the vertical header.
+    # VerticalHeader:
+    # JumpTargetLine is the line that displays the search results.
+    # JumpTargetLine:
+    # Alternate is a style that applies line by line.
+    Alternate:
+      Background: "#1C1B1A"
+    # Ruler is a style that applies to the ruler.
+    # Ruler:
+    # Header is the style that applies to the header.
+    # Header:
+    # HeaderBorder is the style that applies to the boundary line of the header.
+    # The boundary line of the header refers to the visual separator between the header and the rest of the content.
+    # HeaderBorder:
+    # SectionHeaderBorder is the style that applies to the boundary line of the section header.
+    # The boundary line of the section header is the line that separates different sections in the header.
+    # SectionHeaderBorder:
+    # VerticalHeaderBorder is the style that applies to the boundary character of the vertical header.
+    # The boundary character of the vertical header refers to the visual separator that delineates the vertical header from the rest of the content.
+    # VerticalHeaderBorder:
+    # LeftStatus is the style that applies to the left status line.
+    # LeftStatus:
+    # RightStatus is the style that applies to the right status line.
+    # RightStatus:
+    # SelectActive is the style that applies to the text being selected (during mouse drag).
+    # SelectActive:
+    # SelectCopied is the style that applies to the text that has been copied to clipboard.
+    # SelectCopied:
+    # PauseLine is the style that applies to the line where follow mode is paused.
+    # PauseLine:
+    # ColumnRainbow is the style that applies to the column rainbow color highlight.
+    ColumnRainbow:
+      - Foreground: "#D14D41"
+      - Foreground: "#DA702C"
+      - Foreground: "#D0A215"
+      - Foreground: "#879A39"
+      - Foreground: "#3AA99F"
+      - Foreground: "#4385BE"
+      - Foreground: "#8B7EC8"
+      - Foreground: "#CE5D97"
+    # MultiColorHighlight is the style that applies to the multi color highlight.
+    # MultiColorHighlight:

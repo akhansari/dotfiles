@@ -18,3 +18,5 @@ vim.o.backupcopy = "yes" -- make file watcher work on save
 vim.o.foldnestmax = 1
 
 vim.o.scrolloff = 5
+
+-- vim.g.lazyvim_prettier_needs_config = true -- avoid conflicts with Prettier

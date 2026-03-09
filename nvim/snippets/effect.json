@@ -1,0 +1,190 @@
+{
+  "Effect Import": {
+    "prefix": "eimp",
+    "body": ["import { Effect } from \"effect\""],
+    "description": "Import Effect from effect"
+  },
+  "Effect Full Import": {
+    "prefix": "eimps",
+    "body": ["import { Schema as S } from \"effect\""],
+    "description": "Import Effect and pipe from effect"
+  },
+  "Effect Success": {
+    "prefix": "esuc",
+    "body": ["Effect.succeed($1)"],
+    "description": "Create an Effect that succeeds with a value"
+  },
+  "Effect Fail": {
+    "prefix": "efail",
+    "body": ["Effect.fail($1)"],
+    "description": "Create an Effect that fails with an error"
+  },
+  "Effect Promise": {
+    "prefix": "eprom",
+    "body": ["Effect.promise(async () => $1)"],
+    "description": "Create an Effect from a promise"
+  },
+  "Effect Try Promise": {
+    "prefix": "etry",
+    "body": [
+      "Effect.tryPromise({",
+      "  try: () => $1,",
+      "  catch: (error) => $2",
+      "})"
+    ],
+    "description": "Create an Effect from a promise with error handling"
+  },
+  "Effect Gen": {
+    "prefix": "egen",
+    "body": ["return Effect.gen(function* () {", "  $0", "})"],
+    "description": "Create an Effect using generator syntax"
+  },
+  "Effect Gen Const": {
+    "prefix": "egenc",
+    "body": ["const ${1:result} = Effect.gen(function* () {", "  $0", "})"],
+    "description": "Create a const Effect using generator syntax"
+  },
+  "Effect Yield": {
+    "prefix": "ey",
+    "body": ["yield* $0"],
+    "description": "Yield an Effect in generator"
+  },
+  "Effect Pipe": {
+    "prefix": "epipe",
+    "body": ["pipe(", "  $1,", "  $0", ")"],
+    "description": "Create a pipe expression"
+  },
+  "Effect Map": {
+    "prefix": "emap",
+    "body": ["Effect.map((${1:value}) => $0)"],
+    "description": "Map over an Effect"
+  },
+  "Effect FlatMap": {
+    "prefix": "eflatmap",
+    "body": ["Effect.flatMap((${1:value}) => $0)"],
+    "description": "FlatMap over an Effect"
+  },
+  "Effect Tap": {
+    "prefix": "etap",
+    "body": ["Effect.tap((${1:value}) => $0)"],
+    "description": "Tap into an Effect for side effects"
+  },
+  "Effect CatchAll": {
+    "prefix": "ecatch",
+    "body": ["Effect.catchAll((${1:error}) => $0)"],
+    "description": "Catch all errors in an Effect"
+  },
+  "Effect CatchTag": {
+    "prefix": "ecatcht",
+    "body": ["Effect.catchTag(\"${1:tag}\", (${2:error}) => $0)"],
+    "description": "Catch specific error tag"
+  },
+  "Effect Match": {
+    "prefix": "ematch",
+    "body": [
+      "Effect.match({",
+      "  onFailure: (${1:error}) => $2,",
+      "  onSuccess: (${3:value}) => $0",
+      "})"
+    ],
+    "description": "Match on Effect success or failure"
+  },
+  "Effect All": {
+    "prefix": "eall",
+    "body": ["Effect.all([$1], { concurrency: \"${2:unbounded}\" })"],
+    "description": "Run multiple Effects in parallel"
+  },
+  "Effect All Object": {
+    "prefix": "eallo",
+    "body": ["Effect.all({", "  $0", "})"],
+    "description": "Run multiple Effects in parallel as object"
+  },
+  "Effect Service": {
+    "prefix": "eserv",
+    "body": [
+      "class ${1:ServiceName} extends Effect.Service<${1:ServiceName}>()(\"${1:ServiceName}\", {",
+      "  effect: Effect.gen(function* () {",
+      "    return {",
+      "      $0",
+      "    }",
+      "  }),",
+      "}) {}"
+    ],
+    "description": "Create an Effect Service"
+  },
+  "Effect Service Tag": {
+    "prefix": "eservt",
+    "body": [
+      "class ${1:ServiceName} extends Context.Tag(\"${1:ServiceName}\")<",
+      "  ${1:ServiceName},",
+      "  {",
+      "    $0",
+      "  }",
+      ">() {}"
+    ],
+    "description": "Create an Effect Service using Context.Tag"
+  },
+  "Effect Layer": {
+    "prefix": "elay",
+    "body": [
+      "const ${1:layerName} = Layer.effect(",
+      "  ${2:ServiceTag},",
+      "  Effect.gen(function* () {",
+      "    return {",
+      "      $0",
+      "    }",
+      "  })",
+      ")"
+    ],
+    "description": "Create an Effect Layer"
+  },
+  "Effect Run Promise": {
+    "prefix": "erun",
+    "body": ["Effect.runPromise($1)"],
+    "description": "Run an Effect as a Promise"
+  },
+  "Effect Let": {
+    "prefix": "elet",
+    "body": ["Effect.let(\"${1:name}\", () => $0)"],
+    "description": "Add a let binding in Effect.Do chain"
+  },
+  "Effect Bind": {
+    "prefix": "ebind",
+    "body": ["Effect.bind(\"${1:name}\", () => $0)"],
+    "description": "Add a bind in Effect.Do chain"
+  },
+  "Effect AddFinalizer": {
+    "prefix": "efinal",
+    "body": ["Effect.addFinalizer(() => $0)"],
+    "description": "Add finalizer to current scope"
+  },
+  "Data TaggedEnum": {
+    "prefix": "dtag",
+    "body": [
+      "class ${1:ErrorName} extends Data.TaggedError(\"${1:ErrorName}\")<{",
+      "  $0",
+      "}> {}"
+    ],
+    "description": "Create a tagged error with Data"
+  },
+  "Schema Struct": {
+    "prefix": "sstruct",
+    "body": ["const ${1:SchemaName} = Schema.Struct({", "  $0", "})"],
+    "description": "Create a Schema struct"
+  },
+  "Schema Parse": {
+    "prefix": "sparse",
+    "body": ["Schema.decode(${1:schema})($2)"],
+    "description": "Parse with a schema (decode)"
+  },
+  "Effect Annotate": {
+    "prefix": "eanno",
+    "body": ["Effect.annotateCurrentSpan(\"${1:key}\", $2)"],
+    "description": "Annotate current span with key-value"
+  },
+  "Effect WithSpan": {
+    "prefix": "espan",
+    "body": ["Effect.withSpan(\"${1:span-name}\")"],
+    "description": "Add a span to an Effect"
+  }
+}

@@ -1,6 +1,7 @@
 return {
   {
     "folke/snacks.nvim",
+    ---@module "snacks"
     ---@type snacks.Config
     opts = {
 
@@ -34,6 +35,18 @@ return {
                 },
               },
             },
+          },
+        },
+      },
+
+      notifier = {
+        timeout = 5000,
+      },
+
+      styles = {
+        notification = {
+          wo = {
+            wrap = true,
           },
         },
       },

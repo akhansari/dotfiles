@@ -9,14 +9,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- vim.api.nvim_create_autocmd("BufWritePre", {
---   pattern = { "*.ts", "*.astro", "*.svelte" },
+--   group = vim.api.nvim_create_augroup("BiomeFixAll", { clear = true }),
+--   pattern = { "*.ts", "*.svelte" },
 --   callback = function()
 --     vim.lsp.buf.code_action({
+--       context = { only = { "source.fixAll.biome" } },
 --       apply = true,
---       context = {
---         only = { "source.organizeImports" },
---         diagnostics = {},
---       },
 --     })
 --   end,
 -- })

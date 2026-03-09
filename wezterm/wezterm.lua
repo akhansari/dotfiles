@@ -1,18 +1,24 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
-local config = {}
+local config = wezterm.config_builder()
 
 config.default_prog = { "/home/linuxbrew/.linuxbrew/bin/nu" }
 
-config.hide_tab_bar_if_only_one_tab = false
-config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
+config.color_scheme = "flexoki-dark"
+config.colors = {
+	background = "black",
+}
 
-config.font = wezterm.font_with_fallback({ "Fira Code", "FiraCode Nerd Font" })
-config.font_size = 10.0
+config.hide_tab_bar_if_only_one_tab = true
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+-- config.window_background_opacity = 0.8
+
+config.font = wezterm.font_with_fallback({ "FiraCode Nerd Font" })
+config.font_size = 10.5
+config.hide_mouse_cursor_when_typing = true
 
 config.keys = {
-	{ key = "c", mods = "CTRL|SHIFT", action = act.ActivateCommandPalette },
-	-- { key = "l", mods = "ALT", action = act.ShowLauncher },
+	{ key = "c", mods = "ALT", action = act.ActivateCommandPalette },
 	{
 		key = "h",
 		mods = "CTRL|ALT",
@@ -23,10 +29,10 @@ config.keys = {
 		mods = "CTRL|ALT",
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
-	-- { key = "u", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
-	-- { key = "e", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },
-	-- { key = "p", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Up") },
-	-- { key = "i", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
+	{ key = "u", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
+	{ key = "e", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },
+	{ key = "p", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Up") },
+	{ key = "i", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
 }
 
 local copy_mode = nil
@@ -51,11 +57,6 @@ if wezterm.gui then
 		key = "e",
 		mods = "NONE",
 		action = act.CopyMode("MoveRight"),
-	})
-	table.insert(copy_mode, {
-		key = "E",
-		mods = "NONE",
-		action = act.CopyMode("MoveForwardWordEnd"),
 	})
 end
 

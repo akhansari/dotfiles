@@ -1,16 +1,18 @@
 
-command = nu
+command = /home/linuxbrew/.linuxbrew/bin/nu
 
 theme = Flexoki Dark
 window-theme = ghostty
-window-decoration = server
-app-notifications = false
-gtk-tabs-location = hidden
+window-decoration = none
+window-padding-x = 3
+bell-features = no-system, no-audio, attention, title, border
+# gtk-toolbar-style = raised-border
+# gtk-tabs-location = hidden
 # background-image = ./robot.png
 # background-image-fit = none
 # background-image-opacity = 0.05
 # background-image-position = bottom-right
-background-opacity = 0.8
+# background-opacity = 0.8
 background-blur = true
 
 font-family = FiraCode Nerd Font
@@ -20,21 +22,23 @@ mouse-hide-while-typing = true
 copy-on-select = true
 selection-clear-on-copy = true
 
-keybind = alt+t=new_tab
-keybind = alt+u=previous_tab
-keybind = alt+e=next_tab
+# keybind = alt+t=new_tab
+keybind = ctrl+shift+u=previous_tab
+keybind = ctrl+shift+e=next_tab
 
-keybind = alt+ctrl+u=new_split:left
-keybind = alt+ctrl+i=new_split:down
-keybind = alt+ctrl+e=new_split:right
-keybind = alt+ctrl+p=new_split:up
+keybind = alt+ctrl+left=new_split:left
+keybind = alt+ctrl+down=new_split:down
+keybind = alt+ctrl+right=new_split:right
+keybind = alt+ctrl+up=new_split:up
+
 keybind = alt+left=goto_split:left
-keybind = alt+i=goto_split:down
+keybind = alt+down=goto_split:down
 keybind = alt+right=goto_split:right
-keybind = alt+p=goto_split:top
+keybind = alt+up=goto_split:top
 
 keybind = ctrl+|=reset_font_size   
 keybind = ctrl+tab=toggle_tab_overview
- 
+
 keybind = ctrl+shift+f=write_scrollback_file:paste
 # keybind = shift+enter=text:\x1b\r
+
