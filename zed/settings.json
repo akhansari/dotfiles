@@ -7,6 +7,39 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.6",
+      "enable_thinking": false,
+    },
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "claude-sonnet-4.6",
+        "enable_thinking": false,
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5-mini",
+        "enable_thinking": false,
+      },
+    ],
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  "edit_predictions": {
+    "provider": "copilot",
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "formatter": null,
   "which_key": {
     "enabled": true,
     "delay_ms": 500,

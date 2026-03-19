@@ -1,11 +1,13 @@
-theme = "base16_default_dark"
+
+theme = "mytheme"
 
 [editor]
 
 line-number = "relative"
 default-line-ending = "lf"
-shell = ["pwsh", "-c"]
+shell = ["nu", "-c"]
 bufferline = "multiple"
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 
@@ -15,12 +17,16 @@ select = "underline"
 
 [editor.lsp]
 
-display-messages = true
 # display-inlay-hints = true
+
+[editor.inline-diagnostics]
+
+cursor-line = "hint"
+# other-lines = "warning"
 
 [editor.indent-guides]
 
-render = true
+render = false
 
 [editor.file-picker]
 
@@ -50,9 +56,13 @@ k = "paste_after"
 K = "paste_before"
 I = "join_selections_space"
 
-C-s = ":w"
-C-q = ":q"
-C-g = ":bc"
+A-u = "goto_first_nonwhitespace"
+A-e = "goto_line_end"
+
+C-s = ":write"
+C-q = ":buffer-close"
+
+space = { t = [":new", ":insert-output lazygit", ":buffer-close!"] }
 
 [keys.normal."é"]
 
@@ -83,4 +93,5 @@ G = "goto_first_change"
 " " = "add_newline_above"
 
 [keys.insert]
+
 C-space = "completion"

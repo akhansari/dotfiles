@@ -20,9 +20,6 @@
     "swap",
     "disk",
     "display",
-    "packages",
-    "dns",
-    "publicip",
-    "localip",
-  ],
+    "packages"
+  ]
 }

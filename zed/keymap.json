@@ -7,32 +7,43 @@
 // from the command palette.
 [
   {
-    "context": "vim_mode == normal",
+    "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
       "u": "vim::Left",
-      "U": "vim::FirstNonWhitespace",
-      "i": "vim::Down",
       "p": "vim::Up",
       "e": "vim::Right",
+      "i": "vim::Down",
+
+      "k": "vim::Paste",
+    },
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "U": "vim::FirstNonWhitespace",
       "E": "vim::EndOfLine",
       "h": "vim::Undo",
       "H": "vim::Redo",
       "l": "vim::InsertBefore",
       "L": "vim::InsertFirstNonWhitespace",
-      "k": "vim::Paste",
 
       "I": "editor::ShowSignatureHelp",
 
+      "space space": "file_finder::Toggle",
+      "space b d": "pane::CloseActiveItem",
+
       "é m": "vim::NextMethodStart",
+      "é n": "window::ShowNextWindowTab",
+      "ç n": "window::ShowPreviousWindowTab",
+      "é é": "vim::GoToNextReference",
+      "ç ç": "vim::GoToPreviousReference",
+      "é d": "editor::GoToDiagnostic",
+      "ç d": "editor::GoToPreviousDiagnostic",
+      "é space": "vim::InsertEmptyLineBelow",
     },
   },
   {
     "context": "vim_mode == visual",
-    "bindings": {
-      "u": "vim::Left",
-      "I": "vim::Down",
-      "P": "vim::Up",
-      "e": "vim::Right",
-    },
+    "bindings": {},
   },
 ]

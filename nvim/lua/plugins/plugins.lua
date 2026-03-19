@@ -1,5 +1,16 @@
 return {
 
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters = {
+        biome = {
+          require_cwd = false,
+        },
+      },
+    },
+  },
+
   -- {
   --   "dmmulroy/ts-error-translator.nvim",
   --   opts = {
